@@ -1,6 +1,6 @@
 export const PrimarySection = () => {
   return (
-    <div className="max-w-335 mx-auto text-center mt-20 mb-20">
+    <div className="max-w-335 mx-auto text-center mt-20 mb-40">
       <h1 className="text-[48px]">HELLO EVERYONE!</h1>
       <p className="text-[20px] text-black/50 max-w-178 mx-auto">
         I&#96;m Leo, a <span className="text-black">fullstack developer</span>{" "}
