@@ -1,46 +1,11 @@
-import websiteImage from "../../../public/assets/png/ecotech.png";
-import percar from "../../../public/assets/png/percar.png";
-import sharixweb from "../../../public/assets/png/sharixFrient.png";
-import vvrem from "../../../public/assets/png/vvrem.png";
-import trelloAnalog from "../../../public/assets/png/trello-analog.png";
-import soueast from "../../../public/assets/png/soueast.png";
 import { Card } from "./Card";
-
-const portfolio = [
-  {
-    id: 1,
-    image: websiteImage,
-    text: "ECOTECH",
-  },
-  {
-    id: 2,
-    image: vvrem,
-    text: "VVREM",
-  },
-  {
-    id: 3,
-    image: percar,
-    text: "PERCAR",
-  },
-  {
-    id: 4,
-    image: soueast,
-    text: "SOUEAST-NZV",
-  },
-  {
-    id: 5,
-    image: sharixweb,
-    text: "SPORT-FRIEND",
-  },
-  {
-    id: 6,
-    image: trelloAnalog,
-    text: "TRELLO-ANALOG",
-  },
-];
-
+import { modalData } from "@/consts/modalsData";
 const PROJECTS_TYPE = ["ALL", "FRONTEND", "BACKEND", "FULLSTACK"];
 
+
+  const handleChangeVisability = () => {
+    alert(123)
+  };
 export const Portfolio = () => {
   return (
     <div className="max-w-335 mx-auto text-center">
@@ -54,8 +19,8 @@ export const Portfolio = () => {
       </div>
 
       <div className="w-full flex flex-row overflow-auto lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5">
-        {portfolio.map((project) => (
-          <Card key={project.id} data={project} />
+        {modalData.map((project) => (
+          <Card onClick={handleChangeVisability} key={project.id} data={project} />
         ))}
       </div>
     </div>

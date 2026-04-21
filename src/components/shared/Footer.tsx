@@ -1,5 +1,5 @@
+import { SOCIAL_MEDIA } from "@/consts/socialMedia";
 import Link from "next/link";
-import { SOCIAL_MEDIA } from "./Header";
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
             key={index}
             className="inline-flex items-center justify-center w-12 h-12 lg:w-20 lg:h-20 transition-transform hover:scale-110"
           >
-            <div className="w-full h-full">{media.icon}</div>
+            <div className="w-full h-full flex items-center justify-center [&>svg]:max-w-full [&>svg]:max-h-full">{media.icon}</div>
           </Link>
         ))}
       </ul>

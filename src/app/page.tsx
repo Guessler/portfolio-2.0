@@ -1,3 +1,4 @@
+"use client";
 import Footer from "@/components/shared/Footer";
 import { Experiance } from "@/components/ui/Experiance";
 import { Portfolio } from "@/components/ui/Portfolio";

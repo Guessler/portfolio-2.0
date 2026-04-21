@@ -1,20 +1,11 @@
 import Link from "next/link";
 import {
-  GitHubSocial,
-  Gmail,
-  Telegram,
-  // Russia,
   Burger,
   Britain,
-  VK,
 } from "../../../public/svg";
-const NAV_ITEMS = ["experience", "skills", "portfolio", "contacts"];
-export const SOCIAL_MEDIA = [
-  { icon: <VK />, link: "https://vk.com/" },
-  { icon: <Gmail />, link: "https://mail.google.com/mail/u/0/" },
-  { icon: <Telegram />, link: "https://web.telegram.org/" },
-  { icon: <GitHubSocial />, link: "https://github.com/Guessler" },
-];
+import { SOCIAL_MEDIA } from "@/consts/socialMedia";
+import { NAV_ITEMS } from "@/consts/headerInfo";
+
 
 export default function Header() {
   return (
