@@ -27,7 +27,7 @@ export const Card = ({ data }: { data: any }) => {
 
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end text-white gap-5">
+            <div className="relative z-10 h-full flex flex-col items-center justify-end text-white gap-5">
                 <Image
                     src={data.image}
                     alt={data.text}
