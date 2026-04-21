@@ -53,7 +53,7 @@ export const Portfolio = () => {
         ))}
       </div>
 
-      <div className="w-full grid grid-cols-3 gap-5">
+      <div className="w-full flex flex-row overflow-auto lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5">
         {portfolio.map((project) => (
           <Card key={project.id} data={project} />
         ))}

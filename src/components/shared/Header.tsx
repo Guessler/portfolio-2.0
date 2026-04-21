@@ -18,8 +18,8 @@ export const SOCIAL_MEDIA = [
 
 export default function Header() {
   return (
-    <nav className="fixed left-1/2 -translate-x-1/2 top-5 max-w-335 w-[calc(100%-40px)] flex items-center justify-between py-5 px-11.5 rounded-[80px] bg-white shadow-[0_6.4px_67.92px_0_rgba(0,0,0,0.2)] z-50">
-      <h2 className="text-[33.5px]">PORTFOLIO</h2>
+    <nav className="fixed left-1/2 -translate-x-1/2 lg:top-5 w-full lg:max-w-335 lg:w-[calc(100%-40px)] flex items-center justify-between py-[15px] lg:py-5 px-2.5 lg:px-11.5 rounded-b-[10px] lg:rounded-[80px] bg-white shadow-[0_6.4px_67.92px_0_rgba(0,0,0,0.2)] z-50">
+      <h2 className="text-[24px] lg:text-[33.5px]">PORTFOLIO</h2>
 
       <ul className="hidden lg:flex gap-12">
         {NAV_ITEMS.map((item, index) => (

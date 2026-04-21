@@ -6,7 +6,7 @@ import Skills from "@/components/ui/Skills";
 
 export default function Home() {
   return (
-    <div className="space-y-25">
+    <div className="space-y-10 lg:space-y-25">
       <PrimarySection />
       <Skills />
       <Experiance />

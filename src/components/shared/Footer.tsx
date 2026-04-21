@@ -10,11 +10,9 @@ export default function Footer() {
           <Link
             href={media.link}
             key={index}
-            style={{ display: "inline-block", width: "80px", height: "80px" }}
+            className="inline-flex items-center justify-center w-12 h-12 lg:w-20 lg:h-20 transition-transform hover:scale-110"
           >
-            <div className="icon-wrapper" style={{ transform: "scale(1.2)" }}>
-              {media.icon}
-            </div>
+            <div className="w-full h-full">{media.icon}</div>
           </Link>
         ))}
       </ul>

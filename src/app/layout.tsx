@@ -24,7 +24,7 @@ export default function RootLayout({
       lang="en"
       className={` ${joanSans.variable} font-joan h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col px-5">
+      <body className="min-h-full flex flex-col px-2.5 md:px-5">
         <Header />
         <div className="mt-30">{children}</div>
       </body>

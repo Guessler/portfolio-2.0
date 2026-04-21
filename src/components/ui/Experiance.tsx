@@ -27,7 +27,7 @@ export const Experiance = () => {
         PREVIOUS PLACES <span className="text-black/50 text-[16px] lg:text-[24px]"> (AND CURRENT)</span>
       </h1>
 
-      <div className="w-full flex flex-row overflow-auto lg:grid lg:grid-cols-3 gap-5">
+      <div className="w-full flex flex-row overflow-auto lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5">
         {PLACES.map((place) => (
           <Card key={place.id} data={place} />
         ))}

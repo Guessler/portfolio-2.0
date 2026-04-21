@@ -56,7 +56,7 @@ export default function Skills() {
         {Object.entries(SKILLS_TOOLS).map(([category, items]) => (
           <div key={category} className="flex flex-col gap-5 items-center">
             <h3 className="text-black/60 text-[16px] lg:text-[32px]">{category}</h3>
-            <div className="flex flex-wrap gap-2.25 lg:gap-7 justify-center px-12 lg:px-0">
+            <div className="flex flex-wrap gap-1 lg:gap-7 justify-center px-12 lg:px-0">
               {items.map((item, index) => (
                 <a
                   key={index}

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Card = ({ data }: { data: any }) => {
     return (
-        <div className="relative w-full flex items-center justify-center h-[337px] rounded-[30px] overflow-hidden group cursor-pointer">
+        <div className="relative lg:w-full flex items-center justify-center min-w-[212px] h-[165px] lg:h-[337px] rounded-[30px] overflow-hidden group cursor-pointer">
             <div className="absolute inset-0 overflow-hidden">
                 <Image
                     src={data.image}
@@ -31,10 +31,9 @@ export const Card = ({ data }: { data: any }) => {
                 <Image
                     src={data.image}
                     alt={data.text}
-                    width={225}
-                    className="object-cover transition-all duration-700 scale-110"
+                    className="object-cover w-25 lg:w-56.25 transition-all duration-700 scale-110"
                 />
-                <h3 className="text-2xl font-bold mb-2">{data.text}</h3>
+                <h3 className="text-[13px] md:text-2xl font-bold mb-2">{data.text}</h3>
             </div>
         </div>
     );
