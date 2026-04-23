@@ -4,6 +4,8 @@ import { Card } from "./Card";
 import BaseModal from "./modals/BaseModal";
 import { useMemo, useState } from "react";
 import { experianceData } from "@/consts/experianceData";
+import { useLang } from "@/providers/LanguageProvider";
+import { dict } from "@/consts/translations";
 
 export const Experiance = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
@@ -29,12 +31,15 @@ export const Experiance = () => {
     setSelectedProjectId(null);
   };
 
+  const { lang } = useLang();
+  const t = dict[lang];
+
   return (
     <div className="max-w-335 mx-auto text-center">
       <h1 className="text-[20px] lg:text-[48px] mb-5">
-        PREVIOUS PLACES{" "}
+        {t.experience.title}{" "}
         <span className="text-black/50 text-[16px] lg:text-[24px]">
-          (AND CURRENT)
+          {t.experience.subtitle}
         </span>
       </h1>
 

@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { Card } from "./Card";
 import { portfolioModalData } from "@/consts/portfolioData";
 import BaseModal from "./modals/BaseModal";
+import { useLang } from "@/providers/LanguageProvider";
+import { dict } from "@/consts/translations";
 
 const PROJECTS_TYPE = ["ALL", "FRONTEND", "BACKEND", "FULLSTACK"];
 
@@ -31,10 +33,13 @@ export const Portfolio = () => {
     setSelectedProjectId(null);
   };
 
+  const { lang } = useLang();
+  const t = dict[lang];
+
   return (
     <div className="max-w-335 mx-auto text-center">
-      <h1 className="text-[20px] lg:text-[48px]">MY WORKS</h1>
-      <div className="flex gap-5  items-center justify-center mb-5">
+      <h1 className="text-[20px] lg:text-[48px]">{t.portfolio.title}</h1>
+      <div className="flex gap-5 items-center justify-center mb-5">
         {PROJECTS_TYPE.map((project, index) => (
           <p key={index} className="text-[16px] lg:text-[24px] text-black/60">
             {project}

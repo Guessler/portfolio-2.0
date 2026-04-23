@@ -1,9 +1,13 @@
 import { SKILLS_TOOLS } from "@/consts/skills";
+import { dict } from "@/consts/translations";
+import { useLang } from "@/providers/LanguageProvider";
 
 export default function Skills() {
+  const { lang } = useLang();
+  const t = dict[lang];
   return (
     <div className="max-w-350 mx-auto">
-      <h1 className="text-[20px] lg:text-[48px] text-center">SKILLS</h1>
+      <h1 className="text-[20px] lg:text-[48px] text-center">{t.skills.title}</h1>
       <div className="flex flex-col gap-5 lg:gap-15 text-center py-5">
         {Object.entries(SKILLS_TOOLS).map(([category, items]) => (
           <div key={category} className="flex flex-col gap-5 items-center">

@@ -19,23 +19,10 @@ export const LanguageProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [lang, setLang] = useState<Lang>(() => {
-    if (typeof window === "undefined") return "en";
-
-    const saved = localStorage.getItem("lang") as Lang | null;
-    if (saved) return saved;
-
-    // fallback на язык браузера
-    return navigator.language.startsWith("ru") ? "ru" : "en";
-  });
-
-  const changeLang = (l: Lang) => {
-    setLang(l);
-    localStorage.setItem("lang", l);
-  };
+  const [lang, setLang] = useState<Lang>("en");
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang: changeLang }}>
+    <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
     </LanguageContext.Provider>
   );

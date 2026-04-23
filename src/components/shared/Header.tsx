@@ -5,38 +5,26 @@ import { Burger, Britain } from "../../../public/svg";
 import { SOCIAL_MEDIA } from "@/consts/socialMedia";
 import { MobileMenu } from "../ui/modals/MobileMenu";
 import { createPortal } from "react-dom";
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import { useLang } from "@/providers/LanguageProvider";
 import { dict } from "@/consts/translations";
 
-const subscribe = () => () => {};
-const getSnapshot = () => true;
-const getServerSnapshot = () => false;
-
 export default function Header() {
-  const isMounted = useSyncExternalStore(
-    subscribe,
-    getSnapshot,
-    getServerSnapshot,
-  );
-
   const [visible, setVisible] = useState(false);
   const { lang, setLang } = useLang();
+
+  const t = dict[lang];
 
   const toggleVisability = () => {
     setVisible((prev) => !prev);
   };
 
-  const t = dict[lang];
-
   return (
     <nav className="fixed left-1/2 -translate-x-1/2 xl:top-5 w-full xl:max-w-335 xl:w-[calc(100%-40px)] flex items-center justify-between py-[15px] xl:py-5 px-2.5 xl:px-11.5 rounded-b-[10px] xl:rounded-[80px] bg-white shadow-[0_6.4px_67.92px_0_rgba(0,0,0,0.2)] z-50">
-      <h2 className="text-[20px] xl:text-[33.5px]">
-        {isMounted ? t.header.portfolio : "PORTFOLIO"}
-      </h2>
+      <h2 className="text-[20px] xl:text-[33.5px]">{t.header.portfolio}</h2>
 
       <ul className="hidden xl:flex gap-12">
-        {(isMounted ? Object.values(t.header.nav) : []).map((item, index) => (
+        {Object.values(t.header.nav).map((item, index) => (
           <li key={index} className="text-[22px] text-black/60">
             <Link href="#">{item}</Link>
           </li>
@@ -64,9 +52,7 @@ export default function Header() {
         </div>
       </div>
 
-      {visible && isMounted
-        ? createPortal(<MobileMenu />, document.body)
-        : null}
+      {visible && createPortal(<MobileMenu />, document.body)}
     </nav>
   );
 }
