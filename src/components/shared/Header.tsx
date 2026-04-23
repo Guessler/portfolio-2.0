@@ -1,17 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { Burger, Britain } from "../../../public/svg";
+import { Burger, Britain, WhiteBurger, Russia } from "../../../public/svg";
 import { SOCIAL_MEDIA } from "@/consts/socialMedia";
 import { MobileMenu } from "../ui/modals/MobileMenu";
 import { createPortal } from "react-dom";
 import { useState } from "react";
 import { useLang } from "@/providers/LanguageProvider";
 import { dict } from "@/consts/translations";
+import { useTheme } from "@/providers/ThemeProvider";
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
   const { lang, setLang } = useLang();
+  const { theme } = useTheme();
 
   const t = dict[lang];
 
@@ -25,17 +27,17 @@ export default function Header() {
         {t.header.portfolio}
       </h2>
 
-<ul className="hidden xl:flex gap-12">
-        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
+      <ul className="hidden xl:flex gap-12">
+        <li className="font-space text-[20px]">
           <Link href="#skills">{t.header.nav.skills}</Link>
         </li>
-        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
+        <li className="font-space text-[20px]">
           <Link href="#experience">{t.header.nav.experience}</Link>
         </li>
-        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
+        <li className="font-space text-[20px]">
           <Link href="#portfolio">{t.header.nav.portfolio}</Link>
         </li>
-        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
+        <li className="font-space text-[20px]">
           <Link href="#contacts">{t.header.nav.contacts}</Link>
         </li>
       </ul>
@@ -53,11 +55,12 @@ export default function Header() {
           onClick={() => setLang(lang === "en" ? "ru" : "en")}
           className="flex cursor-pointer"
         >
-          <Britain />
+          {lang === "en" ? <Britain /> : <Russia />}
+
         </button>
 
         <div onClick={toggleVisability} className="block xl:hidden">
-          <Burger />
+          {theme === "dark" ? <WhiteBurger /> : <Burger />}
         </div>
       </div>
 

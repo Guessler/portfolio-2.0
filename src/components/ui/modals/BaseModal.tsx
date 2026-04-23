@@ -16,11 +16,11 @@ export default function BaseModal({
     <div
       onClick={onClose}
       key={data.id}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm sm:p-6 xl:p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm lg:p-6 xl:p-4"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full h-full xl:max-w-300 xl:max-h-[90vh] xl:h-auto bg-white overflow-y-auto"
+        className="relative w-full h-full xl:max-w-300 xl:max-h-[90vh] xl:h-auto bg-white overflow-y-auto lg:rounded-4xl"
       >
         <div className="p-6 sm:p-8 md:p-10 xl:p-12 flex flex-col min-h-full xl:min-h-0">
           <div className="flex-shrink-0">
@@ -73,7 +73,7 @@ export default function BaseModal({
               href={data.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group font-space flex text-base sm:text-lg md:text-xl xl:text-lg items-center justify-center gap-2 w-full py-3 sm:py-4 text-white rounded-xl xl:rounded-2xl font-semibold transition-all duration-300"
+              className="group font-space bg-[#0f172a] text-white flex text-base sm:text-lg md:text-xl xl:text-lg items-center justify-center gap-2 w-full py-3 sm:py-4 rounded-xl xl:rounded-2xl font-semibold transition-all duration-300"
             >
               View Project
               <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

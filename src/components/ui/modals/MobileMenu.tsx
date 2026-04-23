@@ -26,7 +26,6 @@ export const MobileMenu = () => {
       </nav>
 
       <div className="px-6 pb-10">
-        <p className="font-space text-sm uppercase tracking-wider mb-4 opacity-60">Connect</p>
         <div className="flex gap-4">
           {SOCIAL_MEDIA.map((media, index) => (
             <Link
