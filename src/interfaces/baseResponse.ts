@@ -3,7 +3,9 @@ import { ComponentType } from "react";
 
 type TechIcon = ComponentType;
 
-export interface baseResponse {
+type WorkPosition = "frontend" | "backend" | "fullstack" 
+
+export interface portfolioResponse {
   id: number;
   image: StaticImageData;
   name: string;
@@ -11,5 +13,11 @@ export interface baseResponse {
   contributions: string[];
   stack: TechIcon[];
   link: string;
+}
+
+
+export interface experienceResponse extends portfolioResponse{
+  time: string;
+  position: WorkPosition;
 }
 

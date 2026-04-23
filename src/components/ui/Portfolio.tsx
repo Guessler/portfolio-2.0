@@ -1,12 +1,36 @@
+import { useMemo, useState } from "react";
 import { Card } from "./Card";
-import { modalData } from "@/consts/modalsData";
+import { portfolioModalData } from "@/consts/portfolioData";
+import BaseModal from "./modals/BaseModal";
+
 const PROJECTS_TYPE = ["ALL", "FRONTEND", "BACKEND", "FULLSTACK"];
 
-
-  const handleChangeVisability = () => {
-    alert(123)
-  };
 export const Portfolio = () => {
+  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
+    null,
+  );
+
+  const selectedModal = useMemo(() => {
+    return portfolioModalData.find(
+      (project) => project.id === selectedProjectId,
+    );
+  }, [selectedProjectId]);
+
+  const handleOpenModal = (projectId: number) => {
+    const projectExists = portfolioModalData.some(
+      (project) => project.id === projectId,
+    );
+    if (projectExists) {
+      setSelectedProjectId(projectId);
+    } else {
+      console.warn(`Project with id ${projectId} not found`);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProjectId(null);
+  };
+
   return (
     <div className="max-w-335 mx-auto text-center">
       <h1 className="text-[24px] lg:text-[48px]">MY WORKS</h1>
@@ -19,10 +43,17 @@ export const Portfolio = () => {
       </div>
 
       <div className="w-full flex flex-row overflow-auto lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5">
-        {modalData.map((project) => (
-          <Card onClick={handleChangeVisability} key={project.id} data={project} />
+        {portfolioModalData.map((project) => (
+          <Card
+            onClick={() => handleOpenModal(project.id)}
+            key={project.id}
+            data={project}
+          />
         ))}
       </div>
+      {selectedProjectId && (
+        <BaseModal onClose={handleCloseModal} data={selectedModal!} />
+      )}
     </div>
   );
 };

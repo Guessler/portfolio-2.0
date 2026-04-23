@@ -9,10 +9,10 @@ import { NAV_ITEMS } from "@/consts/headerInfo";
 
 export default function Header() {
   return (
-    <nav className="fixed left-1/2 -translate-x-1/2 lg:top-5 w-full lg:max-w-335 lg:w-[calc(100%-40px)] flex items-center justify-between py-[15px] lg:py-5 px-2.5 lg:px-11.5 rounded-b-[10px] lg:rounded-[80px] bg-white shadow-[0_6.4px_67.92px_0_rgba(0,0,0,0.2)] z-50">
-      <h2 className="text-[24px] lg:text-[33.5px]">PORTFOLIO</h2>
+    <nav className="fixed left-1/2 -translate-x-1/2 xl:top-5 w-full xl:max-w-335 xl:w-[calc(100%-40px)] flex items-center justify-between py-[15px] xl:py-5 px-2.5 xl:px-11.5 rounded-b-[10px] xl:rounded-[80px] bg-white shadow-[0_6.4px_67.92px_0_rgba(0,0,0,0.2)] z-50">
+      <h2 className="text-[24px] xl:text-[33.5px]">PORTFOLIO</h2>
 
-      <ul className="hidden lg:flex gap-12">
+      <ul className="hidden xl:flex gap-12">
         {NAV_ITEMS.map((item, index) => (
           <Link key={index} href="#">
             <li className="text-[22px] text-black/60">{item}</li>
@@ -20,7 +20,7 @@ export default function Header() {
         ))}
       </ul>
 
-      <ul className="hidden lg:flex gap-4">
+      <ul className="hidden xl:flex gap-4">
         {SOCIAL_MEDIA.map((media, index) => (
           <Link href={media.link} key={index}>
             {media.icon}
@@ -33,7 +33,7 @@ export default function Header() {
           <Britain />
         </button>
 
-        <div className="block lg:hidden">
+        <div className="block xl:hidden">
           <Burger />
         </div>
       </div>

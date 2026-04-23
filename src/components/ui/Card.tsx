@@ -1,12 +1,12 @@
 
-import { baseResponse } from "@/interfaces/baseResponse";
+import { portfolioResponse } from "@/interfaces/baseResponse";
 import Image from "next/image";
 
 export const Card = ({
   data,
   onClick 
 }: {
-  data: Pick<baseResponse, "image" | "name">;
+  data: Pick<portfolioResponse, "image" | "name">;
   onClick: () => void; 
 }) => {
   return (
