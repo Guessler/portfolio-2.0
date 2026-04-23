@@ -8,11 +8,11 @@ import Skills from "@/components/ui/Skills";
 export default function Home() {
   return (
     <div className="space-y-10 lg:space-y-25">
-      <PrimarySection />
-      <Skills />
-      <Experiance />
-      <Portfolio />
-      <Footer />
+      <section id="hero"><PrimarySection /></section>
+      <section id="skills"><Skills /></section>
+      <section id="experience"><Experiance /></section>
+      <section id="portfolio"><Portfolio /></section>
+      <section id="contacts"><Footer /></section>
     </div>
   );
 }

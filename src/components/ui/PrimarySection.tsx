@@ -6,8 +6,8 @@ export const PrimarySection = () => {
   const t = dict[lang];
   return (
     <div className="max-w-335 mx-auto text-center mt-20">
-      <h1 className="text-[24px] lg:text-[48px]">{t.primary.title}</h1>
-      <p className="text-[15px] lg:text-[20px] text-black/50 max-w-178 mx-auto">
+      <h1 className="font-playfair text-[28px] md:text-[40px] lg:text-[56px] font-medium tracking-tight leading-tight">{t.primary.title}</h1>
+      <p className="font-inter text-[15px] lg:text-[18px] text-black/60 max-w-178 mx-auto mt-4 leading-relaxed">
       {t.primary.description}
       </p>
     </div>

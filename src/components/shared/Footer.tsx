@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <footer className="max-w-335 mx-auto text-center mb-20">
-      <h1 className="text-[20px] lg:text-[48px] mb-9">
+      <h1 className="font-playfair text-[24px] lg:text-[52px] mb-9 font-medium tracking-wide">
         {t.footer.title}
       </h1>
 
