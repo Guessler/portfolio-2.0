@@ -23,6 +23,7 @@ export const portfolioModalData: portfolioResponse[] = [
     ],
     stack: [ReactIcon, NextJS, Zustand, Tailwind, TS],
     link: "https://vvrem.ru",
+    type: "frontend",
   },
   {
     id: 2,
@@ -39,6 +40,7 @@ export const portfolioModalData: portfolioResponse[] = [
     ],
     stack: [ReactIcon, NextJS, Zustand, Tailwind, TS],
     link: "https://vvrem.ru",
+    type: "fullstack",
   },
   {
     id: 3,
@@ -55,6 +57,7 @@ export const portfolioModalData: portfolioResponse[] = [
     ],
     stack: [ReactIcon, NextJS, Zustand, Tailwind, TS],
     link: "https://vvrem.ru",
+    type: "backend",
   },
   {
     id: 4,
@@ -71,6 +74,7 @@ export const portfolioModalData: portfolioResponse[] = [
     ],
     stack: [ReactIcon, NextJS, Zustand, Tailwind, TS],
     link: "https://vvrem.ru",
+    type: "frontend",
   },
   {
     id: 5,
@@ -87,6 +91,7 @@ export const portfolioModalData: portfolioResponse[] = [
     ],
     stack: [ReactIcon, NextJS, Zustand, Tailwind, TS],
     link: "https://vvrem.ru",
+    type: "fullstack",
   },
   {
     id: 6,
@@ -103,5 +108,6 @@ export const portfolioModalData: portfolioResponse[] = [
     ],
     stack: [ReactIcon, NextJS, Zustand, Tailwind, TS],
     link: "https://vvrem.ru",
+    type: "fullstack",
   },
 ];

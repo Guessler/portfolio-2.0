@@ -3,7 +3,8 @@ import { ComponentType } from "react";
 
 type TechIcon = ComponentType;
 
-type WorkPosition = "frontend" | "backend" | "fullstack" 
+type WorkPosition = "frontend" | "backend" | "fullstack";
+type ProjectType = "frontend" | "backend" | "fullstack";
 
 export interface portfolioResponse {
   id: number;
@@ -13,10 +14,11 @@ export interface portfolioResponse {
   contributions: string[];
   stack: TechIcon[];
   link: string;
+  type: ProjectType;
 }
 
 
-export interface experienceResponse extends portfolioResponse{
+export interface experienceResponse extends Omit<portfolioResponse, 'type'>{
   time: string;
   position: WorkPosition;
 }

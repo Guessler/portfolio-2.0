@@ -9,7 +9,7 @@ export const MobileMenu = () => {
   const t = dict[lang];
 
   return (
-    <div className="fixed top-0 left-0 z-10 bg-white w-full pt-24 h-screen flex flex-col">
+    <div className="fixed top-0 left-0 z-20 bg-white w-full pt-24 h-screen flex flex-col">
       <nav className="flex-1 flex flex-col gap-2 px-6">
         <Link href="#skills" className="font-space text-2xl text-black/70 hover:text-black transition-colors py-3">
           {t.header.nav.skills}

@@ -19,11 +19,11 @@ export default function Skills() {
                 <a
                   key={index}
                   href={item.link}
-                  className="w-12 h-12"
+                  className="w-12 h-12 transition-all duration-300 hover:scale-110"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="w-9.75 h-9.75 lg:w-15  lg:h-15 flex items-center justify-center ">
+                  <div className="w-9.75 h-9.75 lg:w-15 lg:h-15 flex items-center justify-center [&>svg]:opacity-40 [&>svg]:hover:opacity-100 [&>svg]:transition-opacity">
                     {item.icon}
                   </div>
                 </a>

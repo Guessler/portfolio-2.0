@@ -15,36 +15,38 @@ export default function BaseModal({
     <div
       onClick={onClose}
       key={data.id}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm xl:p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm sm:p-6 xl:p-4"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full xl:max-w-300 relative bg-white shadow-2xl flex items-center justify-center xl:rounded-[40px] p-8 md:p-12 overflow-y-auto h-screen xl:h-auto"
+        className="relative w-full h-full xl:max-w-300 xl:max-h-[90vh] xl:h-auto bg-white xl:rounded-[40px] overflow-y-auto"
       >
-        <div className="w-full">
-          <h1 className="font-playfair text-center text-[24px] md:text-4xl font-bold tracking-tight text-gray-900 mb-4">
-            {data.name}
-          </h1>
-          {"position" in data && (
-            <p className="font-inter text-[18px] md:text-[20px] text-black/50 -mt-6 uppercase tracking-widest">
-              {data.position}-developer
-            </p>
-          )}
-          <p className="max-w-170 mx-auto font-inter text-[14px] md:text-[16px] text-center text-gray-600 md:leading-relaxed mb-4 md:mb-8">
+        <div className="p-6 sm:p-8 md:p-10 xl:p-12 flex flex-col min-h-full xl:min-h-0">
+          <div className="flex-shrink-0">
+            <h1 className="font-playfair text-center text-2xl sm:text-3xl md:text-4xl xl:text-[28px] font-medium tracking-tight text-gray-900 mb-2">
+              {data.name}
+            </h1>
+            {"position" in data && (
+              <p className="font-space text-center text-sm sm:text-base md:text-xl text-gray-400 uppercase tracking-wider mb-4">
+                {data.position}
+                <span className="text-gray-500"> developer</span>
+              </p>
+            )}
+          </div>
+          
+          <p className="font-inter text-sm sm:text-base md:text-lg text-center text-gray-600 leading-relaxed mb-6 flex-shrink-0">
             {data.description}
           </p>
 
-          <div className="space-y-8 ">
+          <div className="flex-1 space-y-5 xl:space-y-8">
             <div>
-              <h2 className="font-space text-lg font-semibold flex items-center gap-2 mb-4 text-gray-800 tracking-wide">
-                <span className="text-xl">🎯</span> My Contribution
+              <h2 className="font-space text-base sm:text-lg md:text-xl xl:text-lg font-medium text-gray-800 mb-3">
+                My Contribution
               </h2>
-              <ul className="space-y-2 text-gray-600 text-[10px] sm:text-sm md:text-base sm:pl-2 md:pl-10">
+              <ul className="space-y-2">
                 {data.contributions.map((item, i) => (
-                  <li key={i} className="font-inter flex items-center text-left gap-1">
-                    <span className="text-blue-500 text-[14px] md:text-lg items-center justify-center hidden md:flex w-5">
-                      ✦
-                    </span>
+                  <li key={i} className="font-inter text-sm sm:text-base md:text-lg xl:text-base text-gray-600 flex items-start gap-2">
+                    <span className="text-blue-500 mt-0.5 flex-shrink-0">✦</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -52,31 +54,36 @@ export default function BaseModal({
             </div>
 
             <div>
-              <h2 className="font-space text-lg font-semibold flex items-center gap-2 mb-4 text-gray-800 tracking-wide">
-                <span className="text-[16px] md:text-xl">🛠</span> Tech Stack
+              <h2 className="font-space text-base sm:text-lg md:text-xl xl:text-lg font-medium text-gray-800 mb-3">
+                Tech Stack
               </h2>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3 sm:gap-4 xl:gap-2">
                 {data.stack.map((TechIcon, index) => (
-                  <div className="w-8 md:w-15" key={index}>
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 xl:w-12 xl:h-12" key={index}>
                     <TechIcon />
                   </div>
                 ))}
               </div>
             </div>
-            <div className="pt-4">
-              <a
-                href={data.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group font-space flex text-[16px] md:text-xl items-center justify-center gap-2 w-full py-2 md:py-4 bg-black/70 text-white rounded-xl md:rounded-2xl font-semibold hover:bg-black transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <span>View Project</span>
-              </a>
-            </div>
+          </div>
+          
+          <div className="flex-shrink-0 pt-4 xl:pt-4">
+            <a
+              href={data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group font-space flex text-base sm:text-lg md:text-xl xl:text-lg items-center justify-center gap-2 w-full py-3 sm:py-4 bg-black/70 text-white rounded-xl xl:rounded-2xl font-semibold hover:bg-black transition-all duration-300"
+            >
+              View Project
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </div>
         </div>
+        
         <button
-          className="absolute top-5 right-6 cursor-pointer"
+          className="absolute top-4 right-4 w-9 h-9 sm:w-10 sm:h-10 xl:top-5 xl:right-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center cursor-pointer transition-colors"
           onClick={onClose}
         >
           <Cross />
