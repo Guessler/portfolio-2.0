@@ -26,16 +26,16 @@ export default function Header() {
       </h2>
 
 <ul className="hidden xl:flex gap-12">
-        <li className="font-space text-[20px] text-black/60 tracking-wide hover:text-black transition-colors">
+        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
           <Link href="#skills">{t.header.nav.skills}</Link>
         </li>
-        <li className="font-space text-[20px] text-black/60 tracking-wide hover:text-black transition-colors">
+        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
           <Link href="#experience">{t.header.nav.experience}</Link>
         </li>
-        <li className="font-space text-[20px] text-black/60 tracking-wide hover:text-black transition-colors">
+        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
           <Link href="#portfolio">{t.header.nav.portfolio}</Link>
         </li>
-        <li className="font-space text-[20px] text-black/60 tracking-wide hover:text-black transition-colors">
+        <li className="font-space text-[20px] text-black/60 dark:text-white/60 tracking-wide hover:text-black dark:hover:text-white transition-colors">
           <Link href="#contacts">{t.header.nav.contacts}</Link>
         </li>
       </ul>

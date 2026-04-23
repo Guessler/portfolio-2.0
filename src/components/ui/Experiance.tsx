@@ -37,7 +37,7 @@ export const Experiance = () => {
     <div className="max-w-335 mx-auto text-center">
       <h1 className="font-playfair text-[24px] lg:text-[52px] mb-5 font-medium leading-[30px]">
         {t.experience.title}{" "} <br className=" md:hidden flex"/>
-        <span className="font-inter text-black/50 text-[16px] lg:text-[24px] font-normal">
+        <span className="font-inter text-black/50 dark:text-white/50 text-[16px] lg:text-[24px] font-normal">
           {t.experience.subtitle}
         </span>
       </h1>

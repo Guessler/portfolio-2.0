@@ -46,15 +46,15 @@ export const Portfolio = () => {
         <div className="md:hidden relative">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="font-space text-base text-black bg-gray-100 px-4 py-2 rounded-xl flex items-center gap-2"
+            className="font-space text-base bg-gray-100 dark:bg-gray-800 px-4 py-2 rounded-xl flex items-center gap-2"
           >
-            {activeFilter}
-            <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="text-gray-700 dark:text-gray-200">{activeFilter}</span>
+            <svg className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-2 min-w-[150px] z-20">
+            <div className="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-xl py-2 min-w-[150px] z-15">
               {PROJECT_TYPES.map((type) => (
                 <button
                   key={type}
@@ -63,7 +63,7 @@ export const Portfolio = () => {
                     setIsDropdownOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2 font-space text-base transition-colors ${
-                    activeFilter === type ? "bg-gray-100 text-black font-medium" : "text-black/60 hover:bg-gray-50"
+                    activeFilter === type ? "bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-medium" : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                   }`}
                 >
                   {type}
@@ -80,8 +80,8 @@ export const Portfolio = () => {
               onClick={() => setActiveFilter(type)}
               className={`font-space text-[16px] lg:text-[24px] tracking-wide transition-all cursor-pointer ${
                 activeFilter === type 
-                  ? "text-black font-medium" 
-                  : "text-black/50 hover:text-black/80"
+                  ? "font-medium" 
+                  : ""
               }`}
             >
               {type}

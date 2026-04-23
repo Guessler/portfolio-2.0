@@ -11,7 +11,7 @@ export default function Skills() {
       <div className="flex flex-col gap-5 lg:gap-15 text-center py-5">
         {Object.entries(SKILLS_TOOLS).map(([category, items]) => (
           <div key={category} className="flex flex-col gap-5 items-center">
-            <h3 className="font-space text-black/60 text-[18px] lg:text-[34px] font-medium tracking-wide uppercase">
+            <h3 className="font-space text-black/60 dark:text-white/60 text-[18px] lg:text-[34px] font-medium tracking-wide uppercase">
               {category}
             </h3>
             <div className="flex flex-wrap gap-1 lg:gap-7 justify-center px-12 lg:px-0">
@@ -23,7 +23,7 @@ export default function Skills() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="w-9.75 h-9.75 lg:w-15 lg:h-15 flex items-center justify-center [&>svg]:opacity-40 [&>svg]:hover:opacity-100 [&>svg]:transition-opacity">
+                  <div className="w-9.75 h-9.75 lg:w-15 lg:h-15 flex items-center justify-center [&_svg]:opacity-40 [&_svg]:hover:opacity-100 [&_svg]:transition-opacity">
                     {item.icon}
                   </div>
                 </a>
