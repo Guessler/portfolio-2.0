@@ -5,15 +5,24 @@ import { Burger, Britain, WhiteBurger, Russia } from "../../../public/svg";
 import { SOCIAL_MEDIA } from "@/consts/socialMedia";
 import { MobileMenu } from "../ui/modals/MobileMenu";
 import { createPortal } from "react-dom";
-import { useState } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { useLang } from "@/providers/LanguageProvider";
 import { dict } from "@/consts/translations";
 import { useTheme } from "@/providers/ThemeProvider";
+
+function useHydrated() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+}
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
   const { lang, setLang } = useLang();
   const { theme } = useTheme();
+  const hydrated = useHydrated();
 
   const t = dict[lang];
 
@@ -55,12 +64,12 @@ export default function Header() {
           onClick={() => setLang(lang === "en" ? "ru" : "en")}
           className="flex cursor-pointer"
         >
-          {lang === "en" ? <Britain /> : <Russia />}
-
+          {lang === "en" ? <Britain /> : <Russia/>}
+          
         </button>
 
         <div onClick={toggleVisability} className="block xl:hidden">
-          {theme === "dark" ? <WhiteBurger /> : <Burger />}
+          {!hydrated ? <Burger /> : theme === "dark" ? <WhiteBurger /> : <Burger />}
         </div>
       </div>
 
