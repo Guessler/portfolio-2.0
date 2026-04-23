@@ -1,10 +1,5 @@
 import { NextJS, ReactIcon, Tailwind, TS, Zustand } from "../../public/svg";
-import websiteImage from "../../public/assets/png/ecotech.png";
-import percar from "../../public/assets/png/percar.png";
-import sharixweb from "../../public/assets/png/sharixFrient.png";
-import vvrem from "../../public/assets/png/vvrem.png";
-import trelloAnalog from "../../public/assets/png/trello-analog.png";
-import soueast from "../../public/assets/png/soueast.png";
+import sharixweb from "../../public/assets/png/sharix.png";
 import neza from "../../public/assets/png/neza.png";
 import { experienceResponse } from "@/interfaces/baseResponse";
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Joan } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
+import { LanguageProvider } from "@/providers/LanguageProvider";
 
 const joanSans = Joan({
   variable: "--font-joan",
@@ -20,13 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={` ${joanSans.variable} font-joan h-full antialiased`}
-    >
+    <html lang="en" className={` ${joanSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col px-2.5 md:px-5">
-        <Header />
-        <div className="mt-30">{children}</div>
+        <LanguageProvider>
+          <Header />
+          <div className="mt-30">{children}</div>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -39,7 +39,7 @@ export default function BaseModal({
               <h2 className="text-lg font-semibold flex items-center gap-2 mb-4 text-gray-800">
                 <span className="text-xl">🎯</span> My Contribution
               </h2>
-              <ul className="space-y-3 text-gray-600 text-[10px] sm:text-sm md:text-base sm:pl-2 md:pl-10">
+              <ul className="space-y-2 text-gray-600 text-[10px] sm:text-sm md:text-base sm:pl-2 md:pl-10">
                 {data.contributions.map((item, i) => (
                   <li key={i} className="flex items-center text-left gap-1">
                     <span className="text-blue-500 text-[14px] md:text-lg  items-center justify-center hidden md:flex w-5">
