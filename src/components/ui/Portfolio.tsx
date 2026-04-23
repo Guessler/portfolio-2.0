@@ -75,8 +75,22 @@ export const Portfolio = () => {
   const t = dict[lang];
 
   return (
-    <div className="max-w-335 mx-auto text-center">
-      <h1 className="font-playfair text-[24px] lg:text-[52px] font-medium tracking-wide">{t.portfolio.title}</h1>
+    <motion.div
+      className="max-w-335 mx-auto text-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <motion.h1 
+        className="font-playfair text-[24px] lg:text-[52px] font-medium tracking-wide"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        {t.portfolio.title}
+      </motion.h1>
       
       <div className="flex items-center md:justify-center mb-5">
         <div className="md:hidden relative">
@@ -134,24 +148,30 @@ export const Portfolio = () => {
       <AnimatePresence mode="wait">
         <motion.div 
           key={activeFilter}
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.3 }}
           className="w-full flex flex-row overflow-auto md:overflow-hidden lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5 pb-4 lg:pb-0"
         >
-          {filteredProjects.map((project) => (
-            <Card
-              onClick={() => handleOpenModal(project.id)}
+          {filteredProjects.map((project, index) => (
+            <motion.div
               key={project.id}
-              data={project}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+            >
+              <Card
+                onClick={() => handleOpenModal(project.id)}
+                data={project}
+              />
+            </motion.div>
           ))}
         </motion.div>
       </AnimatePresence>
       {selectedProjectId && (
         <BaseModal onClose={handleCloseModal} data={selectedModal!} />
       )}
-    </div>
+    </motion.div>
   );
 };
