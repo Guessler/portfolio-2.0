@@ -31,10 +31,9 @@ export const Experiance = () => {
 
   return (
     <div className="max-w-335 mx-auto text-center">
-      <h1 className="text-[24px] lg:text-[48px] mb-5">
+      <h1 className="text-[20px] lg:text-[48px] mb-5">
         PREVIOUS PLACES{" "}
         <span className="text-black/50 text-[16px] lg:text-[24px]">
-          {" "}
           (AND CURRENT)
         </span>
       </h1>

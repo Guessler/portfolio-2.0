@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="max-w-335 mx-auto text-center mb-20">
-      <h1 className="text-[24px] lg:text-[48px] mb-9">CONTACTS</h1>
+      <h1 className="text-[20px] lg:text-[48px] mb-9">CONTACTS</h1>
       <ul className="flex gap-6 items-center justify-center">
         {SOCIAL_MEDIA.map((media, index) => (
           <Link

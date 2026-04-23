@@ -1,16 +1,18 @@
-
 import { portfolioResponse } from "@/interfaces/baseResponse";
 import Image from "next/image";
 
 export const Card = ({
   data,
-  onClick 
+  onClick,
 }: {
   data: Pick<portfolioResponse, "image" | "name">;
-  onClick: () => void; 
+  onClick: () => void;
 }) => {
   return (
-    <div onClick={onClick} className="relative lg:w-full flex items-center justify-center min-w-[212px] h-[165px] lg:h-[337px] rounded-[30px] overflow-hidden group cursor-pointer">
+    <div
+      onClick={onClick}
+      className="relative lg:w-full flex items-center justify-center min-w-[252px] h-[185px] lg:min-w-[212px] lg:h-[337px] rounded-[30px] overflow-hidden group cursor-pointer"
+    >
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src={data.image}
@@ -39,9 +41,9 @@ export const Card = ({
         <Image
           src={data.image}
           alt={data.name}
-          className="object-cover w-25 lg:w-56.25 transition-all duration-700 scale-110"
+          className="object-cover w-28 lg:w-56.25 transition-all duration-700 scale-110"
         />
-        <h3 className="text-[13px] md:text-2xl font-bold mb-2">{data.name}</h3>
+        <h3 className="text-[14px] md:text-2xl font-bold mb-2">{data.name}</h3>
       </div>
     </div>
   );

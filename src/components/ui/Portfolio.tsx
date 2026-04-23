@@ -33,7 +33,7 @@ export const Portfolio = () => {
 
   return (
     <div className="max-w-335 mx-auto text-center">
-      <h1 className="text-[24px] lg:text-[48px]">MY WORKS</h1>
+      <h1 className="text-[20px] lg:text-[48px]">MY WORKS</h1>
       <div className="flex gap-5  items-center justify-center mb-5">
         {PROJECTS_TYPE.map((project, index) => (
           <p key={index} className="text-[16px] lg:text-[24px] text-black/60">

@@ -3,7 +3,7 @@ import { SKILLS_TOOLS } from "@/consts/skills";
 export default function Skills() {
   return (
     <div className="max-w-350 mx-auto">
-      <h1 className="text-[24px] lg:text-[48px] text-center">SKILLS</h1>
+      <h1 className="text-[20px] lg:text-[48px] text-center">SKILLS</h1>
       <div className="flex flex-col gap-5 lg:gap-15 text-center py-5">
         {Object.entries(SKILLS_TOOLS).map(([category, items]) => (
           <div key={category} className="flex flex-col gap-5 items-center">

@@ -22,9 +22,14 @@ export default function BaseModal({
         className="w-full xl:max-w-300 relative bg-white shadow-2xl flex items-center justify-center xl:rounded-[40px] p-8 md:p-12 overflow-y-auto h-screen xl:h-auto"
       >
         <div className="w-full">
-          <h1 className="text-center text-[24px] md:text-4xl font-bold tracking-tight text-gray-900 mb-4">
+          <h1 className="text-center text-[20px] md:text-4xl font-bold tracking-tight text-gray-900 mb-4">
             {data.name}
           </h1>
+          {"position" in data && (
+            <p className="text-[18px] md:text-[20px] text-black/50 -mt-6 uppercase">
+              {data.position}-developer
+            </p>
+          )}
           <p className="max-w-170 mx-auto text-[14px] md:text-[16px] text-center text-gray-600 md:leading-relaxed mb-4 md:mb-8 text-sm md:text-base">
             {data.description}
           </p>
