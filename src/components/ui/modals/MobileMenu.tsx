@@ -15,7 +15,7 @@ export const MobileMenu = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed top-0 left-0 z-10 bg-white w-full pt-24 h-screen flex flex-col"
+      className="fixed top-0 left-0 z-20 bg-white w-full pt-24 h-screen flex flex-col"
     >
       <motion.nav 
         className="flex-1 flex flex-col gap-2 px-6"

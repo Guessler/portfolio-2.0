@@ -135,3 +135,47 @@ body {
 .dark .hover\:bg-gray-200:hover {
   background-color: #64748b;
 }
+
+[data-dropdown-button] {
+  background-color: white;
+  color: #1f2937;
+}
+
+.dark [data-dropdown-button] {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+[data-dropdown] {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+}
+
+.dark [data-dropdown] {
+  background-color: #1e293b;
+  border-color: #475569;
+}
+
+[data-dropdown-item] {
+  color: #1f2937;
+}
+
+.dark [data-dropdown-item] {
+  color: #e2e8f0;
+}
+
+[data-dropdown-item]:hover {
+  background-color: #f3f4f6;
+}
+
+.dark [data-dropdown-item]:hover {
+  background-color: #334155;
+}
+
+[data-dropdown-item].font-medium {
+  background-color: #e5e7eb;
+}
+
+.dark [data-dropdown-item].font-medium {
+  background-color: #334155;
+}
