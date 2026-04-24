@@ -6,7 +6,8 @@ import BaseModal from "./modals/BaseModal";
 import { useLang } from "@/providers/LanguageProvider";
 import { dict } from "@/consts/translations";
 
-const PROJECT_TYPES = ["ALL", "FRONTEND", "BACKEND", "FULLSTACK"] as const;
+const PROJECT_TYPES = ["ALL", "FRONTEND"] as const;
+// , "BACKEND", "FULLSTACK"
 type ProjectType = (typeof PROJECT_TYPES)[number];
 
 const filterStyles: Record<string, { border: string; text: string; hover: string; activeBorder: string; activeBg: string; activeText: string }> = {

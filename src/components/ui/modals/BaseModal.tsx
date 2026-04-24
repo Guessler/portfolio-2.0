@@ -101,11 +101,11 @@ export default function BaseModal({
                 <h2 className="font-space text-base sm:text-lg md:text-xl xl:text-lg font-medium mb-3">
                   {t.modal.techStack}
                 </h2>
-                <div className="flex flex-wrap gap-3 sm:gap-4 xl:gap-2">
+                <div className="flex flex-wrap gap-3 sm:gap-4 xl:gap-2 items-center justify-center md:justify-start">
                   {data.stack.map((TechIcon, index) => (
                     <motion.div
                       key={index}
-                      className="w-9 h-9 sm:w-11 sm:h-11 xl:w-12 xl:h-12"
+                      className="w-9 h-9 sm:w-11 sm:h-11 xl:w-12 xl:h-12 flex items-center justify-center"
                       initial={{ opacity: 0, scale: 0.5 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.2 + index * 0.03, type: "spring", stiffness: 300, damping: 20 }}
