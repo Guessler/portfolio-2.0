@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { portfolioResponse } from "@/interfaces/baseResponse";
 import Image from "next/image";
+import { useLang } from "@/providers/LanguageProvider";
 
 export const Card = ({
   data,
@@ -9,6 +10,9 @@ export const Card = ({
   data: Pick<portfolioResponse, "image" | "name">;
   onClick: () => void;
 }) => {
+  const { lang } = useLang();
+  const name = typeof data.name === "object" ? data.name[lang] : data.name;
+
   return (
     <motion.div
       onClick={onClick}
@@ -19,7 +23,7 @@ export const Card = ({
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src={data.image}
-          alt={data.name}
+          alt={name}
           fill
           className="object-cover transition-all duration-700 group-hover:scale-110"
           style={{
@@ -44,12 +48,12 @@ export const Card = ({
         <div className="mb-2 sm:mb-3">
           <Image
             src={data.image}
-            alt={data.name}
+            alt={name}
             className="object-cover w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-500 group-hover:scale-105"
           />
         </div>
         <h3 className="font-playfair text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-white tracking-wide text-center drop-shadow-lg">
-          {data.name}
+          {name}
         </h3>
       </div>
 
