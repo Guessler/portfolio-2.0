@@ -5,14 +5,15 @@ import { Burger, Britain, WhiteBurger, Russia } from "../../../public/svg";
 import { SOCIAL_MEDIA } from "@/consts/socialMedia";
 import { MobileMenu } from "../ui/modals/MobileMenu";
 import { createPortal } from "react-dom";
-import { useState, useEffect, useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { useLang } from "@/providers/LanguageProvider";
 import { dict } from "@/consts/translations";
 import { useTheme } from "@/providers/ThemeProvider";
+import { AnimatePresence } from "framer-motion";
 
 function useHydrated() {
   return useSyncExternalStore(
-    () => () => {},
+    () => () => { },
     () => true,
     () => false
   );
@@ -64,16 +65,26 @@ export default function Header() {
           onClick={() => setLang(lang === "en" ? "ru" : "en")}
           className="flex cursor-pointer"
         >
-          {lang === "en" ? <Britain /> : <Russia/>}
-          
+          {lang === "en" ? <Britain /> : <Russia />}
+
         </button>
 
         <div onClick={toggleVisability} className="block xl:hidden">
-          {!hydrated ? <Burger /> : theme === "dark" ? <WhiteBurger /> : <Burger />}
+          <span className="dark:hidden">
+            <Burger />
+          </span>
+          <span className="hidden dark:block">
+            <WhiteBurger />
+          </span>
         </div>
       </div>
 
-      {visible && createPortal(<MobileMenu />, document.body)}
+      {visible && createPortal(
+        <AnimatePresence>
+          <MobileMenu key="mobile-menu" />
+        </AnimatePresence>,
+        document.body
+      )}
     </nav>
   );
 }

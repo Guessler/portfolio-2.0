@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useLang } from "@/providers/LanguageProvider";
 import { dict } from "@/consts/translations";
@@ -9,8 +10,19 @@ export const MobileMenu = () => {
   const t = dict[lang];
 
   return (
-    <div className="fixed top-0 left-0 z-10 bg-white w-full pt-24 h-screen flex flex-col">
-      <nav className="flex-1 flex flex-col gap-2 px-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="fixed top-0 left-0 z-10 bg-white w-full pt-24 h-screen flex flex-col"
+    >
+      <motion.nav 
+        className="flex-1 flex flex-col gap-2 px-6"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.1, duration: 0.3 }}
+      >
         <Link href="#skills" className="font-space text-2xl py-3">
           {t.header.nav.skills}
         </Link>
@@ -23,9 +35,14 @@ export const MobileMenu = () => {
         <Link href="#contacts" className="font-space text-2xl py-3">
           {t.header.nav.contacts}
         </Link>
-      </nav>
+      </motion.nav>
 
-      <div className="px-6 pb-10">
+      <motion.div 
+        className="px-6 pb-10"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.3 }}
+      >
         <div className="flex gap-4">
           {SOCIAL_MEDIA.map((media, index) => (
             <Link
@@ -41,7 +58,7 @@ export const MobileMenu = () => {
             </Link>
           ))}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };

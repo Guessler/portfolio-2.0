@@ -31,11 +31,37 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${spaceGrotesk.variable} h-full antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const theme = localStorage.getItem("theme") || "dark";
+                  const root = document.documentElement;
+
+                  root.setAttribute("data-theme", theme);
+                  if (theme === "dark") {
+                    root.classList.add("dark");
+                  } else {
+                    root.classList.remove("dark");
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+
       <body className="min-h-full flex flex-col px-2.5 md:px-5">
         <ThemeProvider>
           <LanguageProvider>

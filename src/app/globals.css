@@ -124,11 +124,6 @@ body {
   color: rgba(203, 213, 225, 1);
 }
 
-.dark nav {
-  background-color: #1e293b !important;
-  box-shadow: 0 6.4px 67.92px 0 rgba(0, 0, 0, 0.4);
-}
-
 .dark .hover\:bg-gray-50:hover {
   background-color: #334155;
 }
