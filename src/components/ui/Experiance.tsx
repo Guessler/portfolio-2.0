@@ -56,7 +56,7 @@ export const Experiance = () => {
       </motion.h1>
 
       <motion.div 
-        className="w-full flex flex-row overflow-x-auto md:overflow-hidden lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5 pb-4 lg:pb-0"
+        className="w-full flex flex-row overflow-x-auto md:overflow-hidden lg:overflow-visible lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5 pb-4 lg:pb-0 h-fit"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
