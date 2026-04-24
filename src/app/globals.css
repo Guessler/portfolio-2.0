@@ -179,3 +179,12 @@ body {
 .dark [data-dropdown-item].font-medium {
   background-color: #334155;
 }
+
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
