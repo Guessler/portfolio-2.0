@@ -54,7 +54,7 @@ export default function Header() {
 
       <ul className="hidden xl:flex gap-4">
         {SOCIAL_MEDIA.map((media, index) => (
-          <li key={index}>
+          <li className="w-[48px]" key={index}>
             <Link href={media.link}>{media.icon}</Link>
           </li>
         ))}

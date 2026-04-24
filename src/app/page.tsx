@@ -12,7 +12,7 @@ export default function Home() {
       <section id="hero">
         <PrimarySection />
       </section>
-      <section id="experience">
+      <section id="experience" className="overflow-hidden">
         <Experiance />
       </section>
       <section id="portfolio">

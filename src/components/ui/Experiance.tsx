@@ -37,15 +37,15 @@ export const Experiance = () => {
   return (
     <motion.div
       className="max-w-335 mx-auto text-center"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <motion.h1 
         className="font-playfair text-[24px] lg:text-[52px] mb-5 font-medium leading-[30px]"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
@@ -57,16 +57,16 @@ export const Experiance = () => {
 
       <motion.div 
         className="w-full flex flex-row overflow-x-auto md:overflow-hidden lg:overflow-visible lg:grid lg:grid-cols-3 gap-2.5 lg:gap-5 pb-4 lg:pb-0 h-fit"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         {experianceData.map((place, index) => (
           <motion.div
             key={place.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
           >

@@ -7,8 +7,8 @@ import github from "../../public/github.png"
 
 
 export const SOCIAL_MEDIA = [
-  { icon: <Image src={vk} alt={`${vk}`} />, link: "https://vk.com/" },
-  { icon: <Image src={telegram} alt={`${telegram}`} />, link: "https://mail.google.com/mail/u/0/" },
-  { icon: <Image src={gmail} alt={`${gmail}`} />, link: "https://web.telegram.org/" },
+  { icon: <Image src={vk} alt={`${vk}`} />, link: "https://vk.com/absolute223" },
+  { icon: <Image src={telegram} alt={`${telegram}`} />, link: "https://t.me/tlfwrk" },
+  { icon: <Image src={gmail} alt={`${gmail}`} />, link: "https://mail.google.com/mail/u/0/#inbox?compose=new&to=tlfwrk803@gmail.com" },
   { icon: <Image src={github} alt={`${github}`} />, link: "https://github.com/Guessler" },
 ];

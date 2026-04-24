@@ -35,7 +35,7 @@ export default function Footer() {
               href={media.link}
               className="inline-flex items-center justify-center w-12 h-12 lg:w-20 lg:h-20"
             >
-              <div className="w-full h-full flex items-center justify-center [&>svg]:max-w-full [&>svg]:max-h-full">
+              <div className="w-full h-full flex items-center justify-center">
                 {media.icon}
               </div>
             </Link>

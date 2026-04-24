@@ -7,7 +7,7 @@ export const Card = ({
   data,
   onClick,
 }: {
-  data: Pick<portfolioResponse, "image" | "name">;
+  data: Pick<portfolioResponse, "image" | "name"> & { time?: string };
   onClick: () => void;
 }) => {
   const { lang } = useLang();
@@ -54,6 +54,11 @@ export const Card = ({
         </div>
         <h3 className="font-playfair text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-white tracking-wide text-center drop-shadow-lg">
           {name}
+          {data.time && (
+            <span className="font-space text-xs sm:text-sm md:text-base lg:text-lg ml-1 opacity-70">
+              ({data.time} MONTH)
+            </span>
+          )}
         </h3>
       </div>
 

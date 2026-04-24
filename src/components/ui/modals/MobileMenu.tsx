@@ -17,7 +17,7 @@ export const MobileMenu = () => {
       transition={{ duration: 0.3, ease: "easeOut" }}
       className="fixed top-0 left-0 z-20 bg-white w-full pt-24 h-screen flex flex-col"
     >
-      <motion.nav 
+      <motion.nav
         className="flex-1 flex flex-col gap-2 px-6"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -37,7 +37,7 @@ export const MobileMenu = () => {
         </Link>
       </motion.nav>
 
-      <motion.div 
+      <motion.div
         className="px-6 pb-10"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -52,7 +52,7 @@ export const MobileMenu = () => {
               rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center"
             >
-              <div className="[&>img]:max-w-full [&>img]:max-h-full [&>img]:object-contain">
+              <div className=" [&>img]:object-contain">
                 {media.icon}
               </div>
             </Link>

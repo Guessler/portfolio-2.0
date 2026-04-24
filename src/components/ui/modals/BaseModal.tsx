@@ -39,6 +39,7 @@ export default function BaseModal({
   const name = getLangString(data.name as string | LangString, lang);
   const description = getLangString(data.description as string | LangString, lang);
   const contributions = getLangArray(data.contributions as string[] | LangArray, lang);
+  const isPortfolio = "type" in data;
 
   return (
     <AnimatePresence>
@@ -63,6 +64,11 @@ export default function BaseModal({
             <div className="flex-shrink-0">
               <h1 className="font-playfair text-center text-2xl sm:text-3xl md:text-4xl xl:text-[28px] font-medium tracking-tight mb-2">
                 {name}
+                {"time" in data && (
+                  <span className="font-space text-lg sm:text-xl md:text-2xl xl:text-xl ml-2 opacity-60">
+                    ({data.time} MONTH)
+                  </span>
+                )}
               </h1>
               {"position" in data && (
                 <p className="font-space text-center text-sm sm:text-base md:text-xl uppercase tracking-wider mb-4">
@@ -91,7 +97,7 @@ export default function BaseModal({
                       transition={{ delay: 0.1 + i * 0.05 }}
                     >
                       <span className="mt-0.5 flex-shrink-0">✦</span>
-                      <span>{item}</span>
+                      <span className="text-left">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -127,7 +133,7 @@ export default function BaseModal({
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
               >
-                {t.modal.viewProject}
+                {isPortfolio ? t.modal.viewPortfolio : t.modal.viewProject}
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

@@ -37,7 +37,8 @@ export const dict = {
     modal: {
       contribution: "My Contribution",
       techStack: "Tech Stack",
-      viewProject: "View Project",
+      viewProject: "View Company",
+      viewPortfolio: "View Project",
       positionSuffix: "-developer",
     },
     footer: {
@@ -82,7 +83,8 @@ export const dict = {
     modal: {
       contribution: "Мой вклад",
       techStack: "Технический стек",
-      viewProject: "Посмотреть проект",
+      viewProject: "Посмотреть компанию",
+      viewPortfolio: "Посмотреть проект",
       positionSuffix: "-разработчик",
     },
     footer: {
