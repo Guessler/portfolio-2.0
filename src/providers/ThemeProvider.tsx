@@ -11,12 +11,12 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "light";
-  return (localStorage.getItem("theme") as Theme) || "light";
+  if (typeof window === "undefined") return "dark";
+  return (localStorage.getItem("theme") as Theme) || "dark";
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>("dark");
   const isMounted = useRef(false);
 
   useEffect(() => {
