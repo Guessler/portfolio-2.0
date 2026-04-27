@@ -169,7 +169,7 @@ export const portfolioModalData: portfolioResponse[] = [
       ],
     },
     stack: [ReactIcon, NextJS, Zustand, Tailwind, TS],
-    link: "https://ansara-test1.ru/",
+    link: "https://arooma-shop.ru/",
     type: "frontend",
   },
   // {
