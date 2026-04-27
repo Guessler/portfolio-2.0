@@ -9,19 +9,19 @@ import Skills from "@/components/ui/Skills";
 export default function Home() {
   return (
     <div className="space-y-16 lg:space-y-24">
-      <section id="hero">
+      <div id="hero">
         <PrimarySection />
-      </section>
-      <section id="experience" className="overflow-hidden">
+      </div>
+      <section id="experience" className="overflow-hidden scroll-mt-35">
         <Experiance />
       </section>
-      <section id="portfolio">
+      <section id="portfolio" className="scroll-mt-35">
         <Portfolio />
       </section>
-      <section id="skills">
+      <section id="skills" className="scroll-mt-35">
         <Skills />
       </section>
-      <section id="contacts">
+      <section id="contacts" className="scroll-mt-35">
         <Footer />
       </section>
     </div>

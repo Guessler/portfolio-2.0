@@ -5,25 +5,14 @@ import { Burger, Britain, WhiteBurger, Russia } from "../../../public/svg";
 import { SOCIAL_MEDIA } from "@/consts/socialMedia";
 import { MobileMenu } from "../ui/modals/MobileMenu";
 import { createPortal } from "react-dom";
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import { useLang } from "@/providers/LanguageProvider";
 import { dict } from "@/consts/translations";
-import { useTheme } from "@/providers/ThemeProvider";
 import { AnimatePresence } from "framer-motion";
-
-function useHydrated() {
-  return useSyncExternalStore(
-    () => () => { },
-    () => true,
-    () => false
-  );
-}
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
   const { lang, setLang } = useLang();
-  const { theme } = useTheme();
-  const hydrated = useHydrated();
 
   const t = dict[lang];
 
@@ -39,9 +28,6 @@ export default function Header() {
 
       <ul className="hidden xl:flex gap-12">
         <li className="font-space text-[20px]">
-          <Link href="#skills">{t.header.nav.skills}</Link>
-        </li>
-        <li className="font-space text-[20px]">
           <Link href="#experience">{t.header.nav.experience}</Link>
         </li>
         <li className="font-space text-[20px]">
@@ -49,6 +35,9 @@ export default function Header() {
         </li>
         <li className="font-space text-[20px]">
           <Link href="#contacts">{t.header.nav.contacts}</Link>
+        </li>
+        <li className="font-space text-[20px]">
+          <Link href="#skills">{t.header.nav.skills}</Link>
         </li>
       </ul>
 
@@ -66,7 +55,6 @@ export default function Header() {
           className="flex cursor-pointer"
         >
           {lang === "en" ? <Britain /> : <Russia />}
-
         </button>
 
         <div onClick={toggleVisability} className="block xl:hidden">
@@ -79,12 +67,13 @@ export default function Header() {
         </div>
       </div>
 
-      {visible && createPortal(
-        <AnimatePresence>
-          <MobileMenu key="mobile-menu" />
-        </AnimatePresence>,
-        document.body
-      )}
+      {visible &&
+        createPortal(
+          <AnimatePresence mode="wait">
+            <MobileMenu onClose={toggleVisability} />
+          </AnimatePresence>,
+          document.body,
+        )}
     </nav>
   );
 }

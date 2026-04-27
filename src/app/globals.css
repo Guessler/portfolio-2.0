@@ -116,6 +116,18 @@ body {
   color: rgba(203, 213, 225, 0.5);
 }
 
+.dark .text-white {
+  color: rgba(203, 213, 225, 1);
+}
+
+.dark .bg-white {
+  background-color: #1e293b;
+}
+
+.dark .text-white\/50 {
+  color: rgba(203, 213, 225, 0.5);
+}
+
 .dark .hover\:text-black\/80:hover {
   color: rgba(203, 213, 225, 0.8);
 }
